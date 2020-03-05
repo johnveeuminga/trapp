@@ -6,8 +6,9 @@ import AsyncStorage from '@react-native-community/async-storage';
 import ImagePicker from 'react-native-image-picker'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { NavigationEvents } from 'react-navigation';
+import { connect } from 'react-redux';
 
-export default class HomeScreen extends Component {
+class HomeScreen extends Component {
   constructor() {
     super()
 
@@ -19,6 +20,8 @@ export default class HomeScreen extends Component {
 
   componentDidMount() {
     this.fetchSearches()
+
+    console.log(this.props)
   }
   
   async fetchSearches() {
@@ -133,3 +136,11 @@ export default class HomeScreen extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    language: state.language,
+  }
+}
+
+export default connect(mapStateToProps, ({}))(HomeScreen1)
