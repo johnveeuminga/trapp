@@ -143,4 +143,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, ({}))(HomeScreen1)
+export default connect(mapStateToProps, ({}))(HomeScreen)

@@ -15,13 +15,14 @@ class Preloading extends React.Component {
     try {
       const defaultLanguage = await AsyncStorage.getItem('@trapp_defaultLanguage')
       console.log(defaultLanguage)
+      navigation.navigate('SelectLanguage')
 
-      if (defaultLanguage) {
-        this.props.setLanguageState(defaultLanguage)
-        navigation.navigate('Home')
-      } else {
-        navigation.navigate('SelectLanguage')
-      }
+      // if (defaultLanguage) {
+      //   this.props.setLanguageState(defaultLanguage)
+      //   navigation.navigate('Home')
+      // } else {
+      //   navigation.navigate('SelectLanguage')
+      // }
     } catch(err) {
       console.log(err)
     }
